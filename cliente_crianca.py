@@ -1,27 +1,32 @@
+# cliente_crianca.py
 import socket
 
-# Endereço IP e porta do Codespace (substitua pelo endereço do Codespace)
-HOST = 'obscure-sniffle-7xwvwpv47qxfrxwq.github.dev'  # Endereço do Codespace
-PORT = 12345  # Mesma porta usada no servidor
+HOST = '<codespace_name>-<user>-<region>.github.dev'  # Substitua pelo endereço público do primeiro Codespace
+PORT = 12345  # Porta que o servidor está escutando
 
 def iniciar_cliente():
-    # Criando o socket TCP/IP
     cliente_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    cliente_socket.connect((HOST, PORT))
-    print("Conectado ao Papai Noel!")
+    
+    try:
+        # Conecta ao servidor (primeiro Codespace)
+        cliente_socket.connect((HOST, PORT))
+        print(f"Conectado ao Papai Noel em {HOST}:{PORT}")
 
-    while True:
-        mensagem = input("Criança: ")
+        # Mensagem que a criança quer enviar
+        mensagem = "Oi Papai Noel, eu fui um bom menino esse ano!"
         cliente_socket.sendall(mensagem.encode('utf-8'))
-        
+
+        # Recebe a resposta de Papai Noel
         resposta = cliente_socket.recv(1024).decode('utf-8')
-        if not resposta:
-            print("Papai Noel desconectou.")
-            break
-        
         print(f"Papai Noel: {resposta}")
 
-    cliente_socket.close()
+    except Exception as e:
+        print(f"Erro ao conectar ao servidor: {e}")
+
+    finally:
+        # Fecha a conexão
+        cliente_socket.close()
+        print("Conexão com Papai Noel encerrada.")
 
 if __name__ == "__main__":
     iniciar_cliente()
