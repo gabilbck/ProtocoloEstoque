@@ -1,7 +1,7 @@
 # cliente_crianca.py
 import socket
 
-HOST = '<codespace_name>-<user>-<region>.github.dev'  # Substitua pelo endereço público do primeiro Codespace
+HOST = 'curly-space-eureka-7xwvwpv4xx6hwqw4.github.dev'  # Substitua pelo endereço público do primeiro Codespace
 PORT = 12345  # Porta que o servidor está escutando
 
 def iniciar_cliente():
