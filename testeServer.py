@@ -30,25 +30,26 @@ def servidor():
 
     for pergunta in perguntas:
         while True:
+            # Envia a pergunta para a criança
             conexao.send(pergunta.encode())
             resposta = conexao.recv(1024).decode().strip().lower()
 
             print(f"Criança respondeu: {resposta}")
 
+            # Se a resposta for válida (sim ou não), sai do loop
             if resposta == "sim" or resposta == "não":
-                break  # Se a resposta for válida, sai do loop e passa para a próxima pergunta
+                break
             else:
                 conexao.send("Papai Noel: Eu não entendi sua resposta. Por favor, responda com 'sim' ou 'não'.\n".encode())
 
-        # Se a criança responder "não", ela é mandada embora
+        # Se a resposta for "não", a criança é mandada embora
         if resposta != "sim":
             todas_respostas_sim = False
             conexao.send("Papai Noel: Você foi uma má criança! Vá embora!".encode())
             print("Conversa encerrada: Criança foi mandada embora.")
-            conexao.close()
-            servidor_socket.close()
-            return
+            break  # Encerra o loop de perguntas e sai do servidor
 
+    # Se todas as respostas foram "sim", entrega o presente
     if todas_respostas_sim:
         presente = """
 {~._.~}
@@ -58,11 +59,11 @@ def servidor():
 """
         conexao.send(f"Papai Noel: Parabéns! Você foi uma boa criança! Aqui está seu presente:\n{presente}".encode())
         print("Conversa encerrada: Criança foi aprovada e recebeu o presente.")
-        
-        # Após enviar o presente, fechamos a conexão e não aceitamos mais respostas
-        conexao.close()
-        servidor_socket.close()
-        return
+
+    # Fecha a conexão com a criança (ao final da conversa ou quando ela é mandada embora)
+    conexao.close()
+    servidor_socket.close()
+    print("Conexão encerrada.")
 
 if __name__ == "__main__":
     servidor()
