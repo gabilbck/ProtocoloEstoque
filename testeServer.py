@@ -29,11 +29,17 @@ def servidor():
     todas_respostas_sim = True
 
     for pergunta in perguntas:
-        conexao.send(pergunta.encode())
-        resposta = conexao.recv(1024).decode().strip().lower()
+        while True:
+            conexao.send(pergunta.encode())
+            resposta = conexao.recv(1024).decode().strip().lower()
 
-        print(f"Criança respondeu: {resposta}")
+            print(f"Criança respondeu: {resposta}")
 
+            if resposta == "sim" or resposta == "não":
+                break
+            else:
+                conexao.send("Papai Noel: Eu não entendi sua resposta. Por favor, responda com 'sim' ou 'não'.\n".encode())
+        
         if resposta != "sim":
             todas_respostas_sim = False
             conexao.send("Papai Noel: Você foi uma má criança! Vá embora!".encode())
@@ -50,7 +56,7 @@ def servidor():
 (_)-(_)
 """
         conexao.send(f"Papai Noel: Parabéns! Você foi uma boa criança! Aqui está seu presente:\n{presente}".encode())
-        print("Conversa encerrada: Criança fez bem e recebeu o presente.")
+        print("Conversa encerrada: Criança foi aprovada e recebeu o presente.")
         
         # Após enviar o presente, fechamos a conexão e não aceitamos mais respostas
         conexao.close()
