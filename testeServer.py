@@ -36,11 +36,11 @@ def servidor():
             print(f"Criança respondeu: {resposta}")
 
             if resposta == "sim" or resposta == "não":
-                break  # Sai do loop quando a resposta for válida
+                break  # Se a resposta for válida, sai do loop e passa para a próxima pergunta
             else:
                 conexao.send("Papai Noel: Eu não entendi sua resposta. Por favor, responda com 'sim' ou 'não'.\n".encode())
 
-        # Se a criança respondeu "não", é mandada embora
+        # Se a criança responder "não", ela é mandada embora
         if resposta != "sim":
             todas_respostas_sim = False
             conexao.send("Papai Noel: Você foi uma má criança! Vá embora!".encode())
