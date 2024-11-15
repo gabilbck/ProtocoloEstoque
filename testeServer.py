@@ -50,7 +50,7 @@ def servidor():
 (_)-(_)
 """
         conexao.send(f"Papai Noel: Parabéns! Você foi uma boa criança! Aqui está seu presente:\n{presente}".encode())
-        print("Conversa encerrada: Criança foi aprovada e recebeu o presente.")
+        print("Conversa encerrada: Criança fez bem e recebeu o presente.")
         
         # Após enviar o presente, fechamos a conexão e não aceitamos mais respostas
         conexao.close()
