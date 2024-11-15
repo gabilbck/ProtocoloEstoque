@@ -51,9 +51,11 @@ def servidor():
 """
         conexao.send(f"Papai Noel: Parabéns! Você foi uma boa criança! Aqui está seu presente:\n{presente}".encode())
         print("Conversa encerrada: Criança foi aprovada e recebeu o presente.")
-
-    conexao.close()
-    servidor_socket.close()
+        
+        # Após enviar o presente, fechamos a conexão e não aceitamos mais respostas
+        conexao.close()
+        servidor_socket.close()
+        return
 
 if __name__ == "__main__":
     servidor()
