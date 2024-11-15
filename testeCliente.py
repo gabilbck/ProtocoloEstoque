@@ -13,7 +13,7 @@ def cliente():
         mensagem = cliente_socket.recv(1024).decode()
         print(mensagem)
 
-        if "Vá embora" in mensagem or "Feliz Natal" in mensagem:
+        if "Vá embora" in mensagem or "presente" in mensagem:
             print("Conversa encerrada pelo Papai Noel.")
             break
 
