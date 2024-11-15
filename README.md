@@ -1,3 +1,3 @@
 # Protocolo de comunicação para conversar com o Papai Noel
 
-Ajude o velinho barbudo a garantir que as crianças consigam conversar com ele, de forma organizada, seguindo umm protocolo com tratamentos de erros.
+Protocolo de comunicação com o papai noel. Se a criança fez bem durante todo o ano, receberá uma surpresa! Se não... Será mandada embora... :(
