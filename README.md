@@ -1,5 +1,7 @@
 # 💬 Protocolo de comunicação para conversar com o Papai Noel 🎅
 
+> Por: *Gabrieli, Julio e Laiz*
+
 *Imagine só:* o Natal está chegando, e o espírito natalino já tomou conta de todos os cantos. Luzes piscam, músicas tocam, e o cheiro de biscoitos recém-assados está no ar. Mas aí você descobre uma notícia preocupante... O Papai Noel pegou um resfriado! Isso mesmo, ele não pode atender as crianças pessoalmente este ano.
 
 Felizmente, você, sendo uma criança brilhante e cheia de criatividade, encontrou uma solução incrível: um programa especial que permite conversar com o Bom Velhinho através de um protocolo de comunicação super fácil de usar!
