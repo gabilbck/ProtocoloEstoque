@@ -1,30 +1,31 @@
 # Protocolo de comunicação para conversar com o Papai Noel
 
-Protocolo de comunicação com o papai noel. Se a criança fez bem durante todo o ano, receberá uma surpresa! Se não... Será mandada embora... :(
+*Imagine só:* o Natal está chegando, e o espírito natalino já tomou conta de todos os cantos. Luzes piscam, músicas tocam, e o cheiro de biscoitos recém-assados está no ar. Mas aí você descobre uma notícia preocupante... O Papai Noel pegou um resfriado! Isso mesmo, ele não pode atender as crianças pessoalmente este ano.
+
+Felizmente, você, sendo uma criança brilhante e cheia de criatividade, encontrou uma solução incrível: um programa especial que permite conversar com o Bom Velhinho através de um protocolo de comunicação super fácil de usar!
+
+Funciona assim: a cada pergunta que o Papai Noel fizer, você responde. Se sua resposta for positiva, indicando que você foi uma boa criança durante o ano, a conversa continua e você se aproxima do tão esperado presente de Natal. Mas cuidado! Se você não tiver sido tão comportado assim... o Papai Noel poderá encerrar a conversa, e lá se vão suas chances de receber aquele presente tão desejado.
 
 ### VMs Para Testar:
 
-*Criança (Cliente):* <button style="position: relative; right: 20px; bottom: 20px; border: none; box-shadow: none; width: 130px; height: 40px; line-height: 42px; -webkit-perspective: 230px; perspective: 230px; background: transparent; cursor: pointer; overflow: hidden; font-family: 'Lato', sans-serif; font-weight: 500; text-transform: uppercase; color: #fff;">
-  <span style="background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%); display: block; position: absolute; width: 130px; height: 40px; box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1); transition: all 0.3s ease; top: 0; left: 0;"><a href="https://google.com">Agora!<a></span>
-  <span style="background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%); display: block; position: absolute; width: 130px; height: 40px; box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1); transition: all 0.3s ease; transform: rotateX(90deg); top: 0; left: 0;">Baixar VM</span>
-</button>
-*IP:* 192.168.10.1
+**Criança (Cliente):** <a href="#">Baixar VM</a> <br>
+**IP:** 192.168.10.1
 
-*Papai Noel (Servidor):* <button style="position: relative; right: 20px; bottom: 20px; border: none; box-shadow: none; width: 130px; height: 40px; line-height: 42px; -webkit-perspective: 230px; perspective: 230px; background: transparent; cursor: pointer; overflow: hidden; font-family: 'Lato', sans-serif; font-weight: 500; text-transform: uppercase; color: #fff;">
-  <span style="background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%); display: block; position: absolute; width: 130px; height: 40px; box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1); transition: all 0.3s ease; top: 0; left: 0;"><a href="https://google.com">Agora!<a></span>
-  <span style="background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%); display: block; position: absolute; width: 130px; height: 40px; box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1); transition: all 0.3s ease; transform: rotateX(90deg); top: 0; left: 0;">Baixar VM</span>
-</button>
-*IP:* 192.168.10.2
+**Papai Noel (Servidor):** <a href="#">Baixar VM</a> <br>
+**IP:** 192.168.10.2
 
 ### Considerações:
 
-* Projeto criado em Python v.3.13
-* Roda no software *IDLE*
-* As VMs devem possuir 2 adaptadores de rede (NAT e Rede Interna)
+* As VMS roda em SO Windows 10
+* Necessário, pelo menos, 30 GBs de armazenamento para baixar ambas VMs
+* As VMs devem estar configuradas com 2 adaptadores de rede (NAT e Rede Interna)
 * A rede Interna deve ter o mesmo nome em ambas as VMs
 * O Firewall deve estar desativado para garantir que não haja impedimentoos de conexão
+* Projeto criado em Python v.3.13
+* Roda no software *IDLE*
 
 ### Verificação de conexão:
 
-``` ipconfig ``` - verificar se os ips estão configurados corretamente
-``` ping ip.ip.ip.ip ``` - verificar se as máquinas estão enviando e recebendo pacotes, pode testar com os dois ips nas duas máquinas
+* ``` ipconfig ``` - verificar se os ips estão configurados corretamente
+  * Se não estiver correto, deve ser alterado manualmente pelas configurações de rede no *Painel de Controle*
+* ``` ping ip.ip.ip.ip ``` - verificar se as máquinas estão enviando e recebendo pacotes, pode testar com os dois ips nas duas máquinas  
