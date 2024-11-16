@@ -29,7 +29,7 @@ Funciona assim: a cada pergunta que o Papai Noel fizer, você responde. Se sua r
 ### Verificação de conexão:
 
 * ``` ipconfig ``` - verificar se os ips estão configurados corretamente
-  * Se não estiver correto, deve ser alterado manualmente pelas configurações de rede no *Painel de Controle* > *Central de Rede e Compartilhamento* > *Alterar configurações do Adaptador* > (Selcionar a Ethernet sem conexão e botão direito) *Propriedades* > Opção *Protocolo IPV4* > *Propriedades* > (Desmarque a primeira opção e marque a outra) > Configure o primeiro IP como 192.168.10.1 (para a Criança) e 192.168.10.2 (para o Noel) > Clique em OK e pronto.
+  * Se não estiver correto, deve ser alterado manualmente pelas configurações de rede no *Painel de Controle* > *Central de Rede e Compartilhamento* > *Alterar configurações do Adaptador* > (Selcionar a Ethernet sem conexão e botão direito) *Propriedades* > Opção *Protocolo IPV4* > *Propriedades* > (Desmarque a primeira opção e marque a outra) > Configure o primeiro IP como 192.168.10.1 (para a Criança) e 192.168.10.2 (para o Noel) > Configure o segundo IP com a máscara de rede 255.255.255.0 > Clique em OK e pronto.
   * Teste o comando novamente e veja se foi alterado corretamente
 * ``` ping ip.ip.ip.ip ``` - verificar se as máquinas estão enviando e recebendo pacotes, pode testar com os dois ips nas duas máquinas
   * Caso não funcione, verifique o passo anteerior, ou deligue a VM e verifique se os adaptadores estão corretamente configurados na VM do VirtualBOX.  
