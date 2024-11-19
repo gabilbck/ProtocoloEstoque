@@ -10,10 +10,10 @@ Funciona assim: a cada pergunta que o Papai Noel fizer, você responde. Se sua r
 
 ### VMs Para Testar:
 
-**Criança (Cliente):** <a href="#">Baixar VM</a> <br>
+**Criança (Cliente):** <br>
 **IP:** 192.168.10.1
 
-**Papai Noel (Servidor):** <a href="#">Baixar VM</a> <br>
+**Papai Noel (Servidor):** <br>
 **IP:** 192.168.10.2
 
 ### Considerações:
