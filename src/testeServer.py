@@ -42,7 +42,7 @@ def servidor():
                 break
             else:
                 # Resposta inválida, pede para a criança digitar novamente
-                conexao.send("Papai Noel: Eu não entendi sua resposta. Por favor, responda com 'sim' ou 'não'.\n".encode())
+                conexao.send("Papai Noel: Eu não entendi sua resposta. Por favor, responda com 'sim' para repetir a pergunta ou 'não' para sair.\n".encode())
 
         # Processa a resposta válida
         if resposta == "não":
