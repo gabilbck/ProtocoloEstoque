@@ -1,17 +1,17 @@
-import socket
+import socket         # Permitir conexões
 
 def servidor():
     host = '0.0.0.0'  # Aceita conexões de qualquer IP
-    porta = 5000       # Porta de comunicação
+    porta = 5000      # Porta de comunicação
 
-    servidor_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    servidor_socket.bind((host, porta))
-    servidor_socket.listen(1)
+    servidor_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # IPv4, TCP
+    servidor_socket.bind((host, porta))                                 # conecta-se à porta e endereço
+    servidor_socket.listen(1)                                           # escuta um IP por vez
 
     print("Papai Noel esperando por uma criança para conversar...\n")
 
-    conexao, endereco = servidor_socket.accept()
-    print(f"Uma criança chegou para conversar! Conectado com {endereco}\n")
+    conexao, endereco = servidor_socket.accept()                            # quando aceita conexão, conexao e endereco recebem as informações para estabelecer a comunicação
+    print(f"Uma criança chegou para conversar! Conectado com {endereco}\n") # exibe o IP da criança
 
     perguntas = [
         "Você foi uma boa criança este ano? (sim/não)",
@@ -32,7 +32,7 @@ def servidor():
         while True:
             # Envia a pergunta para a criança
             conexao.send(pergunta.encode())
-            resposta = conexao.recv(1024).decode().strip().lower()
+            resposta = conexao.recv(1024).decode().strip().lower() # decodifica, retira espaços e
 
             print(f"Criança respondeu: {resposta}")
 
