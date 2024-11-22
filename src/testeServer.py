@@ -28,13 +28,14 @@ def servidor():
 
     todas_respostas_sim = True
 
-    for pergunta in perguntas:
+    for i, pergunta in enumerate(perguntas, start=1):
         while True:
-            # Envia a pergunta para a criança
-            conexao.send(pergunta.encode())
-            resposta = conexao.recv(1024).decode().strip().lower()  # Decodifica, retira espaços
+            # Envia a pergunta com o número correspondente
+            conexao.send(f"Pergunta {i}: {pergunta}\n".encode())
 
-            print(f"Criança respondeu: {resposta}")
+            # Aguarda a resposta da criança
+            resposta = conexao.recv(1024).decode().strip().lower()
+            print(f"Pergunta {i}, criança respondeu: {resposta}")
 
             # Verifica se a resposta é válida (sim ou não)
             if resposta in {"sim", "não"}:
@@ -47,7 +48,7 @@ def servidor():
         if resposta == "não":
             todas_respostas_sim = False
             conexao.send("Papai Noel: Você foi uma má criança! Vá embora!".encode())
-            print("Conversa encerrada: Criança foi mandada embora.")
+            print(f"Conversa encerrada na pergunta {i}: Criança foi mandada embora.")
             break  # Encerra o loop de perguntas e sai do servidor
 
     # Se todas as respostas foram "sim", entrega o presente
