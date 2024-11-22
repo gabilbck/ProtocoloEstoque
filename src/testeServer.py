@@ -32,18 +32,7 @@ def servidor():
         while True:
             # Envia a pergunta para a criança
             conexao.send(pergunta.encode())
-            
-            # Aguarda confirmação de que a criança está pronta para responder
-            conexao.send("Papai Noel: Quando estiver pronto para responder, digite 'pronto'.\n".encode())
-            confirmacao = conexao.recv(1024).decode().strip().lower()
-
-            if confirmacao != "pronto":
-                conexao.send("Papai Noel: Por favor, digite 'pronto' para começar a responder.\n".encode())
-                continue
-
-            # Após confirmação, aguarda a resposta
-            conexao.send("Agora pode responder.\n".encode())
-            resposta = conexao.recv(1024).decode().strip().lower()
+            resposta = conexao.recv(1024).decode().strip().lower()  # Decodifica, retira espaços
 
             print(f"Criança respondeu: {resposta}")
 
